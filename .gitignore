@@ -1,0 +1,16 @@
+.venv/
+venv/
+.jdk/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.spark-warehouse/
+metastore_db/
+derby.log
+output/
+*.egg-info/
+.idea/
+.vscode/
+dist/
+build/

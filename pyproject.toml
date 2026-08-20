@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "colibri"
+version = "0.1.0"
+description = "PySpark pipeline for wind-turbine telemetry cleaning, daily stats, and anomaly detection."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "pyspark>=3.5.0",
+  "pandas>=2.0.0,<3",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0.0"]
+
+[project.scripts]
+colibri = "colibri.pipeline:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.basedpyright]
+venvPath = "."
+venv = ".venv"
+extraPaths = ["src", ".venv/Lib/site-packages"]
